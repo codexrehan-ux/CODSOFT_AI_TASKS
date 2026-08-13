@@ -9,16 +9,26 @@ def get_response(user_input: str) -> str:
     """Return a predefined response based on the user's input."""
     message = user_input.lower().strip()
 
-    if message in {"hello", "hi", "hey", "good morning", "good afternoon"}:
+    if message in {"hello", "hi", "hey", "good morning", "good afternoon", "good evening"}:
         return "Hello! How can I help you today?"
     elif "your name" in message or "who are you" in message:
         return "I am a simple rule-based AI chatbot created for the CodSoft internship."
-    elif "artificial intelligence" in message or message == "what is ai" or "what is ai" in message:
+    elif "artificial intelligence" in message or "what is ai" in message:
         return "Artificial Intelligence (AI) is the field of creating systems that can perform tasks that normally require human intelligence."
+    elif "machine learning" in message or "what is ml" in message:
+        return "Machine Learning is a branch of AI that enables computers to learn patterns from data and make predictions or decisions."
+    elif "how does ai work" in message or "how ai works" in message:
+        return "AI systems learn patterns from data and use algorithms and models to make predictions, decisions, or generate useful outputs."
     elif "how are you" in message:
         return "I'm doing great! Thanks for asking. How can I help you?"
+    elif "what can you do" in message or "what do you do" in message:
+        return "I can answer a small set of predefined questions about myself and basic AI concepts."
+    elif message in {"thanks", "thank you", "thankyou"}:
+        return "You're welcome!"
     elif "help" in message:
-        return "You can ask me about AI, my name, or simply say hello or goodbye."
+        return "You can ask me about AI, machine learning, my name, or what I can do."
+    elif "who created you" in message or "who made you" in message:
+        return "I was created as a CodSoft Artificial Intelligence internship project."
     elif message in {"bye", "goodbye", "exit", "quit"}:
         return "Goodbye! Have a great day."
     else:
